@@ -1,6 +1,7 @@
 ---
 // Components
 import NavLink from "@components/ui/NavLink.astro";
+import Image from "astro/components/Image.astro";
 
 import { SITE_TITLE } from "@src/consts";
 import DarkModeToggle from "@components/ui/DarkModeToggle.astro";
@@ -11,14 +12,27 @@ import {
   Dropdown,
   DropdownItems,
 } from "astro-navbar";
----
 
-<DarkModeToggle />
+// Content
+import logo from "@assets/images/logo.svg?raw";
+import logoDark from "@assets/images/logo-white.svg?raw";
+---
 
 <header class="gap-5 p-5 lg:flex">
   <Astronav>
-    <div class="flex w-full items-center justify-between">
-      <a class="text-xl font-extrabold">{SITE_TITLE}</a>
+    <div class="flex w-full justify-between">
+      <a
+        href="/"
+        aria-label="homepage"
+        class="inline-block h-auto align-middle"
+        data-navLink>
+        <span class="inline-block w-auto pr-6 dark:hidden"
+          ><Fragment set:html={logo} /></span
+        >
+        <span class="hidden w-auto pr-6 dark:inline-block"
+          ><Fragment set:html={logoDark} />
+        </span></a
+      >
       <div class="block lg:hidden">
         <MenuIcon class="h-4 w-4 text-gray-800">
           <svg
@@ -40,102 +54,102 @@ import {
           </svg></MenuIcon
         >
       </div>
+      <MenuItems class="hidden lg:flex">
+        <ul class="flex flex-col lg:flex-row lg:gap-5">
+          <li><NavLink href="/" data-navLink>Home</NavLink></li>
+          <li><NavLink href="/blog" data-navLink>Blog</NavLink></li>
+          <li><NavLink href="/about" data-navLink>About</NavLink></li>
+          <li>
+            <Dropdown class="group">
+              <button class="flex items-center">
+                <span> Dropdown </span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="3"
+                  stroke="currentColor"
+                  class="mt-0.5 h-3 w-3 group-open:rotate-180">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M19.5 8.25l-7.5 7.5-7.5-7.5"></path>
+                </svg>
+              </button>
+              <DropdownItems class="relative">
+                <div class="absolute top-0">
+                  <ul>
+                    <li>Menu 1</li>
+                    <li>Menu 2</li>
+                    <li>Menu 3</li>
+                  </ul>
+                </div>
+              </DropdownItems>
+            </Dropdown>
+          </li>
+
+          <li><NavLink href="/contact" data-navLink>Contact</NavLink></li>
+        </ul>
+      </MenuItems>
     </div>
-    <MenuItems class="hidden lg:flex">
-      <ul class="flex flex-col lg:flex-row lg:gap-5">
-        <li><NavLink href="/" data-navLink>Home</NavLink></li>
-        <li><NavLink href="/blog" data-navLink>Blog</NavLink></li>
-        <li><NavLink href="/about" data-navLink>About</NavLink></li>
-        <li>
-          <Dropdown class="group">
-            <button class="flex items-center">
-              <span> Dropdown </span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="3"
-                stroke="currentColor"
-                class="mt-0.5 h-3 w-3 group-open:rotate-180">
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M19.5 8.25l-7.5 7.5-7.5-7.5"></path>
-              </svg>
-            </button>
-            <DropdownItems class="relative">
-              <div class="absolute top-0">
-                <ul>
-                  <li>Menu 1</li>
-                  <li>Menu 2</li>
-                  <li>Menu 3</li>
-                </ul>
-              </div>
-            </DropdownItems>
-          </Dropdown>
-        </li>
-
-        <li><NavLink href="/contact" data-navLink>Contact</NavLink></li>
-      </ul>
-    </MenuItems>
   </Astronav>
-</header>
 
-<script>
-  // Accessibility tool: add aria-current to current page nav links.
-  const navLinks = document.querySelectorAll("[data-navLink]");
+  <script>
+    // Accessibility tool: add aria-current to current page nav links.
+    const navLinks = document.querySelectorAll("[data-navLink]");
 
-  navLinks.forEach((link) => {
-    if (link.getAttribute("href") === window.location.pathname) {
-      link.setAttribute("aria-current", "page");
+    navLinks.forEach((link) => {
+      if (link.getAttribute("href") === window.location.pathname) {
+        link.setAttribute("aria-current", "page");
+      }
+    });
+  </script>
+
+  <style>
+    .ham {
+      cursor: pointer;
+      transition: transform 400ms;
+      user-select: none;
     }
-  });
-</script>
+    .hamRotate.active {
+      transform: rotate(45deg);
+    }
+    .hamRotate180.active {
+      transform: rotate(180deg);
+    }
+    .line {
+      fill: none;
+      transition:
+        stroke-dasharray 400ms,
+        stroke-dashoffset 400ms;
+      stroke-width: 5.5;
+      stroke-linecap: round;
+    }
 
-<style>
-  .ham {
-    cursor: pointer;
-    transition: transform 400ms;
-    user-select: none;
-  }
-  .hamRotate.active {
-    transform: rotate(45deg);
-  }
-  .hamRotate180.active {
-    transform: rotate(180deg);
-  }
-  .line {
-    fill: none;
-    transition:
-      stroke-dasharray 400ms,
-      stroke-dashoffset 400ms;
-    stroke-width: 5.5;
-    stroke-linecap: round;
-  }
-
-  .ham8 .top {
-    stroke-dasharray: 40 160;
-  }
-  .ham8 .middle {
-    stroke-dasharray: 40 142;
-    transform-origin: 50%;
-    transition: transform 400ms;
-  }
-  .ham8 .bottom {
-    stroke-dasharray: 40 85;
-    transform-origin: 50%;
-    transition:
-      transform 400ms,
-      stroke-dashoffset 400ms;
-  }
-  .ham8.active .top {
-    stroke-dashoffset: -64px;
-  }
-  .ham8.active .middle {
-    /* stroke-dashoffset: -20px; */
-    transform: rotate(90deg);
-  }
-  .ham8.active .bottom {
-    stroke-dashoffset: -64px;
-  }
-</style>
+    .ham8 .top {
+      stroke-dasharray: 40 160;
+    }
+    .ham8 .middle {
+      stroke-dasharray: 40 142;
+      transform-origin: 50%;
+      transition: transform 400ms;
+    }
+    .ham8 .bottom {
+      stroke-dasharray: 40 85;
+      transform-origin: 50%;
+      transition:
+        transform 400ms,
+        stroke-dashoffset 400ms;
+    }
+    .ham8.active .top {
+      stroke-dashoffset: -64px;
+    }
+    .ham8.active .middle {
+      /* stroke-dashoffset: -20px; */
+      transform: rotate(90deg);
+    }
+    .ham8.active .bottom {
+      stroke-dashoffset: -64px;
+    }
+  </style>
+</header>

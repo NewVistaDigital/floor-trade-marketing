@@ -6,9 +6,9 @@
 
 import { slugify } from './utils/slugify';
 
-export const SITE_TITLE = 'NVD Astro Starterkit';
+export const SITE_TITLE = 'Floor Trade Marketing';
 export const SITE_DESCRIPTION = 'This is the default description of this website. Nice!';
-export const SITE_URL = 'https://example.com/';
+export const SITE_URL = 'https://floortrademarketing.com/';
 export const SITE_EMAIL = 'webmaster@newvistadigital.com';
 export const SITE_PHONE = '(719) 639-1470'
 export const SITE_PHONE_HREF = 'tel:7196391470'
