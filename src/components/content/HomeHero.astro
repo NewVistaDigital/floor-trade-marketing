@@ -2,35 +2,51 @@
 import Button from "@components/ui/Button.astro";
 import Image from "astro/components/Image.astro";
 
-import Install from "@assets/images/install.jpg";
+import ul1 from "@assets/images/underline1.svg?raw";
+import ul2 from "@assets/images/underline2.svg?raw";
 import Chair from "@assets/images/nice-chair.jpg";
 ---
 
-<section class="bg-primary bg-gradient-to-br from-primary to-red-900 py-48">
-  <div class="container mx-auto flex">
-    <div class="w-1/2">
-      <h1 class="mb-8 text-6xl leading-normal text-white">
+<section class="lg:py-46 bg-tan py-36 md:py-40">
+  <div class="relative z-10">
+    <div class="mx-auto flex w-5/6 flex-col lg:w-2/3 xl:w-1/2">
+      <h1 class="mb-8 text-center text-6xl leading-snug max-sm:text-4xl">
         Effective Marketing for Flooring Companies
       </h1>
-      <p class="mb-8 pr-24 text-2xl leading-relaxed text-white">
-        We help flooring companies just like yours <u>get more leads</u>
-        and <u>land more jobs.</u>
+      <p class="mb-8 text-center text-2xl leading-relaxed">
+        We help flooring companies just like yours <span
+          class="relative inline-block"
+          >get more leads<span
+            class="absolute bottom-0 left-0 inline-block w-[11ch] pr-6 dark:hidden"
+            ><Fragment set:html={ul1} /></span
+          ></span
+        >
+        and <span class="relative inline-block"
+          >land more jobs.<span
+            class="absolute bottom-0 left-0 inline-block w-[11ch] pr-6 dark:hidden"
+            ><Fragment set:html={ul2} /></span
+          ></span
+        >
       </p>
-      <Button
-        text="Book your free consultation"
-        href="/"
-        classes="btn-secondary"
-      />
+      <p class="text-center">
+        <Button
+          text="Book your free consultation"
+          href="/contact"
+          classes="btn-secondary "
+        />
+      </p>
     </div>
-    <div class="w-1/2">
-      <Image
-        src={Chair}
-        alt="installer"
-        class="-mt-40 rounded-3xl shadow-2xl"
-        width="900"
-        format="webp"
-        loading="eager"
-      />
-    </div>
+  </div>
+  <div
+    class="stencil absolute -bottom-48 top-0 z-0 overflow-hidden text-8xl font-extrabold text-tan">
+    <p class="-m-8 break-all" style="user-select: none;">
+      Get more leads. Land more jobs. Repeat. Get more leads. Land more jobs.
+      Repeat. Get more leads. Land more jobs. Repeat. Get more leads. Land more
+      jobs. Repeat. Get more leads. Land more jobs. Repeat. Get more leads. Land
+      more jobs.
+    </p>
+  </div>
+  <div
+    class="absolute top-0 z-0 h-full w-full bg-gradient-to-b from-tan to-transparent">
   </div>
 </section>
