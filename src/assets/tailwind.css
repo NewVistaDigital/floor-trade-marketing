@@ -23,11 +23,11 @@
   }
 
   .btn-primary {
-    @apply btn text-white hover:bg-blue-800 hover:text-white dark:text-white dark:hover:bg-blue-300;
+    @apply btn text-white hover:bg-blue-800 hover:text-white;
   }
 
   .btn-secondary {
-    @apply btn bg-secondary;
+    @apply btn bg-secondary dark:text-stone-800;
   }
 
   .btn-tertiary {
