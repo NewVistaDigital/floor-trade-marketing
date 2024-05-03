@@ -3,9 +3,16 @@ export default {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   darkMode: "class",
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        primary: '#D11313',
+        secondary: '#FAA307',
+        tertiary: "370617",
+        black: '#222222',
+      }
+    },
     fontFamily: {
-      sans: ["Inter", "sans-serif"],
+      sans: ["Plus Jakarta Sans", "sans-serif"],
       serif: ["Merriweather", "serif"],
     },
   },

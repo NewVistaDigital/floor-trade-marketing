@@ -6,6 +6,7 @@
 ![Starterkit Image](public/new-vista-digital-starterkit.jpg)
 
 This starterkit is set up to use Tailwindcss and Astro to build quick and performant custom static sites.
+
 ## New Installation
 
 Update `consts.ts` with relevant site information.
@@ -74,4 +75,3 @@ All commands are run from the root of the project, from a terminal:
 ## 👀 Want to learn more?
 
 Check out the [Astro documentation](https://docs.astro.build).
-
