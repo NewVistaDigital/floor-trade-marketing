@@ -16,7 +16,7 @@ export const SITE_PHONE_HREF = "tel:7196391470";
 export const SITE_DEFAULT_IMAGE = "/floortrader.gif";
 export const SITE_UTM_SOURCE = slugify(SITE_TITLE);
 
-export const UI_THEME = "system"; // Values: "system" | "light" | "dark" | "light:only" | "dark:only"
+export const UI_THEME = "light"; // Values: "system" | "light" | "dark" | "light:only" | "dark:only"
 
 export const DISABLE_INDEXING = true;
 
