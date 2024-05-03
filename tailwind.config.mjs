@@ -7,11 +7,12 @@ export default {
       colors: {
         primary: {
           light: '#ffb8ad',
-          DEFAULT: '#FF5C42',
+          DEFAULT: 'oklch(68.74% 0.2568 31.614)',
           dark: '#bb1800',
         },
         secondary: '#FDC148',
         tertiary: "#370617",
+        maroon: '',
         tan: '#F2F0E9',
       }
     },

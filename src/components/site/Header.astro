@@ -16,11 +16,13 @@ import {
 // Content
 import logo from "@assets/images/logo.svg?raw";
 import logoDark from "@assets/images/logo-white.svg?raw";
+import Button from "@components/ui/Button.astro";
 ---
 
-<header class="absolute z-10 w-full gap-5 p-5 lg:flex">
+<header class="absolute z-10 w-full gap-5 p-5">
   <Astronav>
-    <div class="container mx-auto flex w-full items-center justify-between">
+    <div
+      class="container relative mx-auto flex w-full items-center justify-between">
       <a
         href="/"
         aria-label="homepage"
@@ -33,7 +35,8 @@ import logoDark from "@assets/images/logo-white.svg?raw";
           ><Fragment set:html={logoDark} />
         </span></a
       >
-      <div class="block lg:hidden">
+      <div class="relative block flex items-center">
+        <Button href="/contact" style="primary" text="book appointment" />
         <MenuIcon class="h-4 w-4 text-gray-800">
           <svg
             class="ham hamRotate ham8"
@@ -54,8 +57,9 @@ import logoDark from "@assets/images/logo-white.svg?raw";
           </svg></MenuIcon
         >
       </div>
-      <MenuItems class="hidden lg:flex">
-        <ul class="flex flex-col lg:flex-row lg:gap-5">
+      <MenuItems
+        class="links absolute right-0 top-16 text-right opacity-0 transition-all">
+        <ul class="flex flex-col bg-white px-8 py-4">
           <li><NavLink href="/" data-navLink>Home</NavLink></li>
           <li><NavLink href="/blog" data-navLink>Blog</NavLink></li>
           <li><NavLink href="/about" data-navLink>About</NavLink></li>
@@ -103,6 +107,12 @@ import logoDark from "@assets/images/logo-white.svg?raw";
         link.setAttribute("aria-current", "page");
       }
     });
+
+    function toggleMobileNav() {
+      [...document.querySelectorAll(".astronav-toggle")].forEach((el) => {
+        el.classList.toggle("opacity-0");
+      });
+    }
   </script>
 
   <style>

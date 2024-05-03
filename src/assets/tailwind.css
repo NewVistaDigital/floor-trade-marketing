@@ -3,6 +3,11 @@
 @tailwind utilities;
 
 @layer base {
+  .bg-primary {
+    background-color: #ff5c42;
+    background-color: oklch(68.74% 0.2568 31.614);
+  }
+
   h1 {
     @apply text-4xl font-extrabold;
   }
@@ -12,7 +17,7 @@
   }
 
   .stencil {
-    text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.1), 1px -1px 0 rgba(0, 0, 0, 0.1), -1px 1px 0 rgba(0, 0, 0, 0.1), 1px 1px 0 rgba(0, 0, 0, 0.1);
+    text-shadow: -1px -1px 0 oklch(68.74% 0.2568 31.61391320731642 / 0.1), 1px -1px 0 oklch(68.74% 0.2568 31.61391320731642 / 0.1), -1px 1px 0 oklch(68.74% 0.2568 31.61391320731642 / 0.1), 1px 1px 0 oklch(68.74% 0.2568 31.61391320731642 / 0.1);
     @apply leading-none;
   }
 }
@@ -23,7 +28,7 @@
   }
 
   .btn-primary {
-    @apply btn text-white hover:bg-blue-800 hover:text-white;
+    @apply btn text-white hover:bg-red-600 hover:text-white bg-primary;
   }
 
   .btn-secondary {
