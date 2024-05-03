@@ -1,21 +1,36 @@
 ---
 import Button from "@components/ui/Button.astro";
+import Image from "astro/components/Image.astro";
+
+import Install from "@assets/images/install.jpg";
+import Chair from "@assets/images/nice-chair.jpg";
 ---
 
-<section class="bg-primary from-primary bg-gradient-to-br to-red-900 py-48">
-  <div class="container mx-auto">
-    <h1 class="mb-8 w-1/2 text-6xl text-white">
-      Complete Marketing Services for Flooring Companies
-    </h1>
-    <p class="mb-8 w-1/2 text-xl text-white">
-      We help flooring companies just like yours <u>get more leads</u>
-      and <u>land more jobs.</u>
-    </p>
-    <Button
-      text="Book a meeting"
-      href="/"
-      style="secondary"
-      class="btn-secondary"
-    />
+<section class="bg-primary bg-gradient-to-br from-primary to-red-900 py-48">
+  <div class="container mx-auto flex">
+    <div class="w-1/2">
+      <h1 class="mb-8 text-6xl leading-normal text-white">
+        Effective Marketing for Flooring Companies
+      </h1>
+      <p class="mb-8 pr-24 text-2xl leading-relaxed text-white">
+        We help flooring companies just like yours <u>get more leads</u>
+        and <u>land more jobs.</u>
+      </p>
+      <Button
+        text="Book your free consultation"
+        href="/"
+        classes="btn-secondary"
+      />
+    </div>
+    <div class="w-1/2">
+      <Image
+        src={Chair}
+        alt="installer"
+        class="-mt-40 rounded-3xl shadow-2xl"
+        width="900"
+        format="webp"
+        loading="eager"
+      />
+    </div>
   </div>
 </section>
