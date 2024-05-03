@@ -58,7 +58,7 @@ import Button from "@components/ui/Button.astro";
         >
       </div>
       <MenuItems
-        class="links absolute right-0 top-16 text-right opacity-0 transition-all">
+        class="astronav-toggle-dos links absolute right-0 top-16 hidden text-right transition-all">
         <ul class="flex flex-col bg-white px-8 py-4">
           <li><NavLink href="/" data-navLink>Home</NavLink></li>
           <li><NavLink href="/blog" data-navLink>Blog</NavLink></li>
@@ -109,10 +109,13 @@ import Button from "@components/ui/Button.astro";
     });
 
     function toggleMobileNav() {
-      [...document.querySelectorAll(".astronav-toggle")].forEach((el) => {
+      [...document.querySelectorAll(".astronav-toggle-dos")].forEach((el) => {
         el.classList.toggle("opacity-0");
       });
     }
+    // Mobile nav toggle
+    const menuButton = document.getElementById("astronav-menu");
+    menuButton && menuButton.addEventListener("click", toggleMobileNav);
   </script>
 
   <style>
