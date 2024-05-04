@@ -10,7 +10,7 @@ export default {
           DEFAULT: 'oklch(68.74% 0.2568 31.614)',
           dark: '#bb1800',
         },
-        secondary: '#FDC148',
+        secondary: 'oklch(84.48% 0.1928 81.38)',
         tertiary: "#370617",
         maroon: '',
         tan: '#F2F0E9',

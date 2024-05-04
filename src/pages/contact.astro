@@ -6,6 +6,19 @@ import BaseLayout from "@layouts/BaseLayout.astro";
 import Form from "@components/ui/ContactForm.astro";
 ---
 
-<BaseLayout>
-  <Form />
+<BaseLayout title="Contact a Flooring Marketing Expert">
+  <section class="bg-white pt-12 dark:bg-stone-900">
+    <div class="mx-auto max-w-screen-md px-4 py-8 lg:py-16">
+      <h2
+        class="mb-4 text-center text-4xl font-extrabold tracking-tight text-stone-900 dark:text-white">
+        Contact Us
+      </h2>
+      <p
+        class="mb-8 text-center font-light text-stone-500 dark:text-stone-400 sm:text-xl lg:mb-16">
+        Got a technical issue? Want to send feedback about a beta feature? Need
+        details about our Business plan? Let us know.
+      </p>
+      <Form />
+    </div>
+  </section>
 </BaseLayout>

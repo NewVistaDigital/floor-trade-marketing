@@ -2,10 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+::root {
+  --primary: oklch(84.48% 0.1928 81.38);
+}
+
 @layer base {
+  ::root {
+    --primary: oklch(84.48% 0.1928 81.38);
+  }
+
   .bg-primary {
     background-color: #ff5c42;
-    background-color: oklch(68.74% 0.2568 31.614);
+    background-color: var(--primary);
   }
 
   h1 {

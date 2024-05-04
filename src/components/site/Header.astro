@@ -19,7 +19,7 @@ import logoDark from "@assets/images/logo-white.svg?raw";
 import Button from "@components/ui/Button.astro";
 ---
 
-<header class="absolute z-10 w-full gap-5 p-5">
+<header class="absolute z-20 w-full gap-5 p-5">
   <Astronav>
     <div
       class="container relative mx-auto flex w-full items-center justify-between">
@@ -35,9 +35,14 @@ import Button from "@components/ui/Button.astro";
           ><Fragment set:html={logoDark} />
         </span></a
       >
-      <div class="relative block flex items-center">
-        <Button href="/contact" style="primary" text="book appointment" />
-        <MenuIcon class="h-4 w-4 text-gray-800">
+      <div class="relative flex items-center">
+        <Button
+          href="/contact"
+          style="primary"
+          text="book appointment"
+          classes="max-sm:hidden"
+        />
+        <MenuIcon class="z-20 h-4 w-4 text-gray-800">
           <svg
             class="ham hamRotate ham8"
             viewBox="0 0 100 100"
@@ -59,40 +64,19 @@ import Button from "@components/ui/Button.astro";
       </div>
       <MenuItems
         class="astronav-toggle-dos links absolute right-0 top-16 hidden text-right transition-all">
-        <ul class="flex flex-col bg-white px-8 py-4">
+        <ul class="flex flex-col space-y-4 bg-white px-8 py-4">
           <li><NavLink href="/" data-navLink>Home</NavLink></li>
           <li><NavLink href="/blog" data-navLink>Blog</NavLink></li>
           <li><NavLink href="/about" data-navLink>About</NavLink></li>
-          <li>
-            <Dropdown class="group">
-              <button class="flex items-center">
-                <span> Dropdown </span>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="3"
-                  stroke="currentColor"
-                  class="mt-0.5 h-3 w-3 group-open:rotate-180">
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M19.5 8.25l-7.5 7.5-7.5-7.5"></path>
-                </svg>
-              </button>
-              <DropdownItems class="relative">
-                <div class="absolute top-0">
-                  <ul>
-                    <li>Menu 1</li>
-                    <li>Menu 2</li>
-                    <li>Menu 3</li>
-                  </ul>
-                </div>
-              </DropdownItems>
-            </Dropdown>
-          </li>
-
           <li><NavLink href="/contact" data-navLink>Contact</NavLink></li>
+          <li>
+            <Button
+              href="/contact"
+              style="primary"
+              text="book appointment"
+              classes="sm:hidden"
+            />
+          </li>
         </ul>
       </MenuItems>
     </div>
