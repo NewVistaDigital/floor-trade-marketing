@@ -31,8 +31,8 @@ import Button from "@components/ui/Button.astro";
         <span class="inline-block w-auto pr-6 dark:hidden"
           ><Fragment set:html={logo} /></span
         >
-        <span class="hidden w-auto pr-6 dark:inline-block"
-          ><Fragment set:html={logoDark} />
+        <span class="hidden max-w-[78vw] dark:inline-block"
+          ><Fragment set:html={logoDark} style="width:auto;" />
         </span></a
       >
       <div class="relative flex items-center">
@@ -147,6 +147,11 @@ import Button from "@components/ui/Button.astro";
     }
     .ham8.active .bottom {
       stroke-dashoffset: -64px;
+    }
+  </style>
+  <style is:global>
+    .svg-logo {
+      width: 100% !important;
     }
   </style>
 </header>
