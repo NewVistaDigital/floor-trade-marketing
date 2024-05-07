@@ -29,7 +29,7 @@ const { title, description, href, ...rest } = Astro.props as Props;
   .service {
     flex: 1 1 31%;
     cursor: pointer;
-    @apply flex flex-grow flex-col bg-white p-12 max-sm:flex-auto;
+    @apply flex flex-grow flex-col bg-white p-12 transition-colors duration-300 dark:bg-neutral-900 max-sm:flex-auto;
   }
   .service h3 {
     @apply mb-4 font-bold transition-colors;
@@ -39,6 +39,9 @@ const { title, description, href, ...rest } = Astro.props as Props;
   }
   .learn-more-flex {
     @apply mt-6 flex items-center;
+  }
+  .service:hover {
+    @apply bg-orange-50 dark:bg-slate-900;
   }
   .service:hover .learn-more {
     @apply w-3/4;

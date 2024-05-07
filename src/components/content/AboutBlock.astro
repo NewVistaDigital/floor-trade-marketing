@@ -1,0 +1,60 @@
+---
+import Image from "astro/components/Image.astro";
+import Jesse from "@assets/images/jesse.jpg";
+---
+
+<section class="bg-white p-8 dark:bg-neutral-900 sm:p-12 md:p-24">
+  <div class="container mx-auto flex flex-col gap-8 lg:flex-row">
+    <div class="space-y-4 pr-8 lg:w-1/2">
+      <p class="topper">About us</p>
+      <h2>From flooring installer to marketer.</h2>
+      <p>We don’t just talk the talk.</p>
+      <p>
+        For over 10 years we’ve worked in the floring industry - from
+        installation to sales & estimates.
+      </p>
+      <p>
+        On top of that, we got another 10 years in web design and digital
+        marketing.
+      </p>
+      <p>We understand your business. We understand how to help you grow.</p>
+    </div>
+
+    <div><span class="slash"></span></div>
+
+    <div class="relative flex items-center justify-center lg:w-1/2">
+      <span
+        class="absolute block h-1/2 w-full bg-tan dark:bg-neutral-950 sm:w-3/4"
+      ></span>
+      <Image
+        src={Jesse}
+        alt="Jesse profile"
+        loading="lazy"
+        format="webp"
+        class="z-10"
+      />
+      <span
+        class="absolute z-20 -mb-8 -ml-8 block h-80 w-80 border-4 border-black"
+      ></span>
+    </div>
+  </div>
+</section>
+<style>
+  .slash {
+    @apply bg-primary;
+    content: "";
+    height: 20rem;
+    width: 4px;
+    display: block;
+    transform: rotate(7deg) translate(-0rem);
+  }
+  @media (max-width: 1024px) {
+    .slash {
+      @apply bg-stone-300;
+      height: 3px;
+      width: 50%;
+      margin: 0 auto;
+      transform: unset;
+    }
+  }
+</style>

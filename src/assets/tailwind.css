@@ -46,6 +46,10 @@
     @apply font-extrabold;
   }
 
+  .topper {
+    @apply mb-4 text-sm font-bold uppercase tracking-widest text-primary;
+  }
+
   .stencil {
     text-shadow: -1px -1px 0 oklch(68.74% 0.2568 31.613 / 0.1), 1px -1px 0 oklch(68.74% 0.2568 31.61391320731642 / 0.1), -1px 1px 0 oklch(68.74% 0.2568 31.61391320731642 / 0.1), 1px 1px 0 oklch(68.74% 0.2568 31.61391320731642 / 0.1);
     @apply leading-none;
