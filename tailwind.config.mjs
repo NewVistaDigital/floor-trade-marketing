@@ -16,6 +16,15 @@ export default {
         tan: '#F2F0E9',
       }
     },
+    letterSpacing: {
+      tightest: '-.075em',
+      tighter: '-.05em',
+      tight: '-.025em',
+      normal: '0',
+      wide: '.1em',
+      wider: '.175em',
+      widest: '.25em',
+    },
     fontFamily: {
       sans: ["Plus Jakarta Sans", "sans-serif"],
       serif: ["Merriweather", "serif"],
