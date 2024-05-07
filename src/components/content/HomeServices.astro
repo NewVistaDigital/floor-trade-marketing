@@ -1,24 +1,58 @@
 ---
-import { Icon } from "astro-icon/components";
+import Service from "@components/ui/ServiceCard.astro";
+
+// Content
+import Logo from "@assets/images/bg-logo.png?url";
 ---
 
 <section class="p-4 sm:p-6 lg:p-12">
-  <div class="container mx-auto bg-tan p-4 sm:p-6 lg:p-12">
+  <div
+    class="bg-tan container mx-auto p-4 sm:p-6 lg:p-12"
+    style=`background-image: url(${Logo});`>
     <h2 class="mb-12 text-center text-4xl">
       How we keep your flooring company busy<span class="text-primary">.</span>
     </h2>
-    <h3 class="font-serif text-2xl italic text-primary">
+    <h3
+      class="mx-auto mb-24 w-3/4 text-center font-serif text-2xl italic text-primary">
       What’s the best way to acheive your flooring business outcomes? Create one
       cohesive strategy that speaks to specific audiences across channels.
     </h3>
     <div class="flex flex-wrap gap-8">
-      <!-- card 1 -->
-      <!-- end card 1 -->
-      <a class="service bg-white"><h3>Website Design</h3></a>
-      <a class="service bg-white"><h3>Website Design</h3></a>
-      <a class="service bg-white"><h3>Website Design</h3></a>
-      <a class="service bg-white"><h3>Website Design</h3></a>
-      <a class="service bg-white"><h3>Website Design</h3></a>
+      <Service
+        title="Website design"
+        description="Google & customers love our built-from-scratch sites."
+        href="/services"
+      />
+
+      <Service
+        title="Local SEO"
+        description="Dominate your market and get to the top of Google Maps."
+        href="/services"
+      />
+
+      <Service
+        title="SMS & Email Marketing"
+        description="We use AI chat technology to keep you in your customers minds right in their inbox."
+        href="/services"
+      />
+
+      <Service
+        title="Graphic Design"
+        description="Truck/van wraps. Logos & branding. Door hangers. We’ve done it all."
+        href="/services"
+      />
+
+      <Service
+        title="Paid Search"
+        description="Dominate your market and get to the top of Google Maps."
+        href="/services"
+      />
+
+      <Service
+        title="Custom Reporting"
+        description="Keep track of how we're performing to make informed decisions."
+        href="/services"
+      />
     </div>
   </div>
 </section>

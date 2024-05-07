@@ -1,44 +1,55 @@
 ---
+import { Icon } from "astro-icon/components";
 
+// Component props
+interface Props {
+  title: string;
+  description: string;
+  href: string;
+}
+
+const { title, description, href, ...rest } = Astro.props as Props;
 ---
 
-<a class="service"
-><h3>Website Design</h3>
-  <p>Google & customers love our built-from-scratch sites.</p>
-  <p>
+<a class="service" href={href}
+  ><h3>{title}</h3>
+  <p>{description}</p>
+  <p class="mt-auto">
     <span class="learn-more-flex"
-    ><span class="learn-more">Learn more</span><Icon
+      ><span class="learn-more">Learn more</span><Icon
         name="arrow-right"
         class="icon"
+        {...rest}
       /></span
     >
   </p>
 </a>
+
 <style>
-.service {
-  @apply flex flex-grow flex-col bg-white p-12;
-  flex: 1 1 31%;
-  cursor: pointer;
-}
-.service h3 {
-  @apply text-2xl font-bold transition-colors;
-}
-.learn-more {
-  @apply relative inline-block w-0 overflow-hidden whitespace-nowrap text-sm font-bold uppercase transition-all;
-}
-.learn-more-flex {
-  @apply mt-4 flex items-center;
-}
-.service:hover .learn-more {
-  @apply w-2/3;
-}
-.service:hover h3 {
-  @apply text-primary;
-}
-.service:hover .icon {
-  @apply text-primary-dark;
-}
-.icon {
-  @apply inline text-2xl;
-}
+  .service {
+    flex: 1 1 31%;
+    cursor: pointer;
+    @apply flex flex-grow flex-col bg-white p-12 max-sm:flex-auto;
+  }
+  .service h3 {
+    @apply mb-4 text-2xl font-bold transition-colors;
+  }
+  .learn-more {
+    @apply relative inline-block w-0 overflow-hidden whitespace-nowrap text-sm font-bold uppercase transition-all duration-300;
+  }
+  .learn-more-flex {
+    @apply mt-6 flex items-center;
+  }
+  .service:hover .learn-more {
+    @apply w-3/4;
+  }
+  .service:hover h3 {
+    @apply text-primary;
+  }
+  .service:hover .icon {
+    @apply text-primary-dark;
+  }
+  .icon {
+    @apply inline text-2xl;
+  }
 </style>
