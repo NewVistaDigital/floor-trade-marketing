@@ -1,14 +1,17 @@
 ---
+import Image from "astro/components/Image.astro";
 
+// Content
+import Search from "@assets/images/graph.jpg";
 ---
 
 <section class="bg-secondary p-12 dark:bg-neutral-800 md:p-24">
   <h2 class="mb-12 text-center text-4xl">
     Own your local market<span class="text-primary">.</span>
   </h2>
-  <div class="flex flex-col gap-4 md:flex-row">
+  <div class="flex flex-col gap-4 lg:flex-row">
     <div
-      class="mb-0 w-full bg-white p-12 dark:bg-neutral-900 md:-mb-36 md:w-1/2">
+      class="mb-0 w-full bg-white p-12 dark:bg-neutral-900 lg:-mb-36 lg:w-1/2">
       <p class="topper">Exclusivity</p>
       <h3 class="mb-6">We will only help you</h3>
       <p>
@@ -17,11 +20,28 @@
         area. There’s never a conflict of interest when working with us.
       </p>
       <a
-        href="/contact"
-        class="btn my-4 bg-stone-200 px-6 py-2 dark:bg-stone-900"
+        href="/contact?utm_source=home-claim-market"
+        class="btn btn-secondary hpx-6 my-4 py-2 dark:bg-stone-900"
         >Claim your market</a
       >
     </div>
-    <div><p>nice</p></div>
+    <div class="image -mt-4 w-full lg:-ml-12 lg:w-1/2">
+      <Image
+        src={Search}
+        alt="Google Search for Flooring Companies"
+        loading="lazy"
+        widths={[400, 600, 800]}
+        format="webp"
+      />
+    </div>
   </div>
 </section>
+
+<style>
+  @media (max-width: 1024px) {
+    .image {
+      margin-left: -7%;
+      width: 114%;
+    }
+  }
+</style>
