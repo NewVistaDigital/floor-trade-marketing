@@ -7,7 +7,7 @@ import ul1 from "@assets/images/underline1.svg?raw";
 import ul2 from "@assets/images/underline2.svg?raw";
 ---
 
-<section class="lg:py-46 bg-tan relative py-36 dark:bg-stone-900 md:py-40">
+<section class="lg:py-46 relative bg-tan py-36 dark:bg-stone-900 md:py-40">
   <div class="relative z-10">
     <div class="mx-auto flex w-5/6 flex-col lg:w-2/3 xl:w-1/2">
       <h1 class="mb-8 text-center text-6xl leading-snug max-sm:text-4xl">
@@ -17,13 +17,13 @@ import ul2 from "@assets/images/underline2.svg?raw";
         We help flooring companies just like yours <span
           class="relative inline-block"
           >get more leads<span
-            class="absolute bottom-0 left-0 inline-block w-[11ch] pr-6 dark:hidden"
+            class="absolute bottom-0 left-0 inline-block w-[11ch] pr-6"
             ><Fragment set:html={ul1} /></span
           ></span
         >
         and <span class="relative inline-block"
           >land more jobs.<span
-            class="absolute bottom-0 left-0 inline-block w-[11ch] pr-6 dark:hidden"
+            class="absolute bottom-0 left-0 inline-block w-[11ch] pr-6"
             ><Fragment set:html={ul2} /></span
           ></span
         >
@@ -38,7 +38,7 @@ import ul2 from "@assets/images/underline2.svg?raw";
     </div>
   </div>
   <div
-    class="stencil text-tan pointer-events-none absolute -bottom-0 z-0 overflow-hidden text-8xl font-extrabold dark:text-stone-900">
+    class="stencil pointer-events-none absolute -bottom-0 z-0 overflow-hidden text-6xl font-extrabold text-tan dark:text-stone-900 md:text-8xl">
     <p class="-m-8 break-all" style="user-select: none;">
       Get more leads. Land more jobs. Repeat. Get more leads. Land more jobs.
       Repeat. Get more leads. Land more jobs. Repeat. Get more leads. Land more
@@ -49,6 +49,6 @@ import ul2 from "@assets/images/underline2.svg?raw";
     </p>
   </div>
   <div
-    class="from-tan absolute top-0 z-0 h-full w-full bg-gradient-to-b to-transparent dark:from-stone-900">
+    class="absolute top-0 z-0 h-full w-full bg-gradient-to-b from-tan to-transparent dark:from-stone-900">
   </div>
 </section>
