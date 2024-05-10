@@ -27,7 +27,7 @@ export default {
     },
     fontFamily: {
       sans: ["Plus Jakarta Sans", "sans-serif"],
-      serif: ["Merriweather", "serif"],
+      serif: ["Noto Serif Display", "Merriweather", "serif"],
     },
   },
   plugins: [require("@tailwindcss/typography")],

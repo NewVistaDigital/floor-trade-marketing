@@ -9,13 +9,13 @@
 
 html.dark .theme-toggle {
   --icon-fill: hsl(210 10% 70%);
-  --icon-fill-hover: hsl(10 75% 50%);
+  --icon-fill-hover: hsl(40.52 100% 62%);
 }
 
 .theme-toggle {
   --size: 1.4rem;
   --icon-fill: hsl(210 10% 90%);
-  --icon-fill-hover: hsl(10 76% 45%);
+  --icon-fill-hover: hsl(40.52 100% 62%);
   background: none;
   border: none;
   padding: 0;
