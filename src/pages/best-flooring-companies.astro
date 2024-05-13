@@ -1,15 +1,41 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
 
+import { LinkPreview } from "astro-embed";
 import CompanyCard from "@components/ui/CompanyCard.astro";
 import { SITE_UTM_SOURCE } from "@src/consts";
 ---
-<BaseLayout title="The Best Flooring Companies | Web Design for Hardwood Floor, Tile, and Carpet Companies"
-description="We've created a list of the best flooring companies in the nation.">
-  <section class="lg:py-46 relative bg-tan py-36 dark:bg-stone-900 md:py-40">
-    <h1 class="text-4xl text-center">Trusted Flooring Companies Near Me</h1>
-    <p></p>
-<!-- <CompanyCard  title="Springs Hardwood" topper="Hardwood Floors" alt="Avalanche Hardwood Floors" href=`https://springshardwood.com/?utm-source=${SITE_UTM_SOURCE}` /> -->
-  </section>
-</BaseLayout>
 
+<BaseLayout
+  title="The Best Flooring Companies | Web Design for Hardwood Floor, Tile, and Carpet Companies"
+  description="We've created a list of the best flooring companies in the nation.">
+  <article class="lg:py-46 relative bg-tan py-36 dark:bg-stone-900 md:py-40">
+    <h1 class="mb-8 text-center text-4xl">
+      Trusted Flooring Companies Near Me
+    </h1>
+    <div class="container mx-auto flex justify-center">
+      <LinkPreview
+        id=`https://springshardwood.com/?utm-source=${SITE_UTM_SOURCE}`
+      />
+    </div>
+  </article>
+  <style is:global>
+    .link-preview {
+      --lp-corners: 0.75rem !important;
+      @apply overflow-hidden rounded-xl bg-white transition-all hover:shadow-2xl;
+    }
+    .link-preview .link-preview__domain {
+      @apply pb-4 pt-3 text-center text-2xl font-bold;
+    }
+    .link-preview .link-preview__content {
+      @apply px-4;
+    }
+    .link-preview__title {
+      @apply pb-2 font-semibold;
+    }
+    .link-preview .link-preview__description {
+      overflow: visible;
+      display: inline;
+    }
+  </style>
+</BaseLayout>
