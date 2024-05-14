@@ -10,12 +10,12 @@ const { title = SITE_TITLE, description = SITE_DESCRIPTION } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" class="bg-primary">
   <head>
     <BaseHead title={title} description={description} />
   </head>
   <body
-    class="bg-white text-stone-800 transition-colors dark:bg-stone-900 dark:text-white">
+    class="bg-gray-800 text-stone-800 transition-colors dark:bg-stone-900 dark:text-white">
     <a href="#main-content" class="sr-only focus:not-sr-only active:not-sr-only"
       >Skip to content</a
     >
