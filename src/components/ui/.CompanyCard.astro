@@ -5,15 +5,18 @@ import Image from "astro/components/Image.astro";
 // Consts
 interface Props {
   href: string;
-  alt: string;
-  src: string;
+  image?: {
+    alt?: string;
+    src?: string;
+    width?: number;
+  };
+  link?: string;
   text: string;
   title: string;
   topper?: string;
-  width?: number;
 }
 
-const { href, src, alt, width, topper, title, text, link } = Astro.props;
+const { href, image, topper, title, text, link } = Astro.props;
 ---
 
 {
@@ -22,7 +25,16 @@ const { href, src, alt, width, topper, title, text, link } = Astro.props;
       <a
         href={href}
         class="flex flex-col items-center *:transition-colors *:hover:bg-secondary *:hover:dark:bg-yellow-900 ">
-        <Image src={src} alt={alt} width={width} class="mb-0 rounded-xl" />
+        {image &&
+          image.src &&
+          image.alt && (
+            <Image
+              src={image.src}
+              alt={image.alt}
+              width={image.width}
+              class="mb-0 rounded-xl"
+            />,
+          )}
         <div class="relative z-10 mx-6 -mt-12 block flex-grow rounded-xl bg-zinc-200 p-10 dark:bg-zinc-800">
           {topper && (
             <span class="font-space mt-0 text-primary dark:text-teal-400">
