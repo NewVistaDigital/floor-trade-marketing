@@ -1,10 +1,18 @@
 ---
 import Button from "@components/ui/Button.astro";
+import { SITE_PHONE_HREF, SITE_PHONE } from "@src/consts";
+import ul1 from "@assets/images/underline-white.svg?raw";
 ---
 
 <section
   class="space-y-8 bg-gradient-to-br from-red-500 to-primary p-8 text-center dark:from-primary-dark sm:p-12 lg:p-24">
-  <h2>Are you ready to grow your flooring business?</h2>
+  <h2>
+    Want a website that lands jobs for <span class="relative inline-block"
+      >FREE?<span class="absolute bottom-0 left-0 inline-block w-[5ch] pr-6"
+        ><Fragment set:html={ul1} /></span
+      ></span
+    >
+  </h2>
   <p class="text-2xl">
     Schedule your free consultation to see how we can serve you.
   </p>
@@ -13,4 +21,10 @@ import Button from "@components/ui/Button.astro";
     style="secondary"
     href="/contact?utm_source=cta-homepage"
   />
+  <p>or give us a call</p>
+  <a
+    href={SITE_PHONE_HREF}
+    class="inline-block border-2 border-white px-8 py-2 text-center text-xl font-bold text-white hover:bg-black/10 lg:mb-16"
+    title="Click or tap to call">{SITE_PHONE}</a
+  >
 </section>
