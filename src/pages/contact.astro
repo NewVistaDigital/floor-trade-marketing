@@ -4,20 +4,32 @@ import BaseLayout from "@layouts/BaseLayout.astro";
 
 // Content
 import Form from "@components/ui/ContactForm.astro";
+import { SITE_PHONE, SITE_PHONE_HREF } from "@src/consts";
 ---
 
 <BaseLayout title="Contact a Flooring Marketing Expert">
   <section class="bg-white pt-12 dark:bg-stone-900">
     <div class="mx-auto max-w-screen-md px-4 py-8 lg:py-16">
       <h2
-        class="mb-4 text-center text-4xl font-extrabold tracking-tight text-stone-900 dark:text-white">
+        class="my-8 text-center text-6xl font-extrabold tracking-tight text-stone-900 dark:text-white">
         Contact Us
       </h2>
       <p
-        class="mb-8 text-center font-light text-stone-500 dark:text-stone-400 sm:text-xl lg:mb-16">
-        Got a technical issue? Want to send feedback about a beta feature? Need
-        details about our Business plan? Let us know.
+        class="mb-8 text-center font-light text-stone-500 dark:text-stone-400 sm:text-xl">
+        Got a question or proposal? We'd love to show you how we can help you
+        land more jobs. Fill out the form or give us a call today.
       </p>
+      <p
+        class="mb-8 text-center font-light text-stone-500 dark:text-stone-400 sm:text-xl">
+        Want to have your new site built for <b>FREE</b>? We can show you how
+        you can effectively get a new website (marketing machine) at no cost to
+        you.
+      </p>
+      <a
+        href={SITE_PHONE_HREF}
+        class="font-primary block text-center text-4xl font-bold text-primary-dark lg:mb-16"
+        title="Click or tap to call">{SITE_PHONE}</a
+      >
       <Form />
     </div>
   </section>
