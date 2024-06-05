@@ -13,7 +13,7 @@ export const SITE_URL = "https://floortrademarketing.com/";
 export const SITE_EMAIL = "webmaster@newvistadigital.com";
 export const SITE_PHONE = "(719) 639-1470";
 export const SITE_PHONE_HREF = "tel:7196391470";
-export const SITE_DEFAULT_IMAGE = "/floortrader.gif";
+export const SITE_DEFAULT_IMAGE = "/floortrader.png";
 export const SITE_UTM_SOURCE = slugify(SITE_TITLE);
 
 export const UI_THEME = "light"; // Values: "system" | "light" | "dark" | "light:only" | "dark:only"

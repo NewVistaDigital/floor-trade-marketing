@@ -36,10 +36,13 @@ import Button from "@components/ui/Button.astro";
         </span></a
       >
       <div class="relative flex items-center">
-        <a
-          class="whitespace-nowrap px-4 text-lg font-bold"
-          href="tel:7196391470">(719) 639-1470</a
-        >
+        <div class="flex flex-col text-center">
+          <p>Call or text</p>
+          <a
+            class="whitespace-nowrap px-4 font-bold sm:text-lg"
+            href="tel:7196391470">(719) 639-1470</a
+          >
+        </div>
         <Button
           href="/contact?utm_source=header-button"
           style="primary"
