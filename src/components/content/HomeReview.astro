@@ -1,8 +1,34 @@
 ---
 import { Icon } from "astro-icon/components";
+import { LinkPreview } from "astro-embed";
+
+import { SITE_UTM_SOURCE } from "@src/consts";
 ---
 
-<section class="bg-tan dark:bg-zinc-950 p-12 md:p-24 md:pt-32">
+<section class="bg-tan p-12 dark:bg-zinc-950 md:p-24 md:pt-32">
+  <h2 class="mb-12 text-center text-6xl">Case Study</h2>
+  <div class="mb-24 flex items-center gap-12">
+    <div class="w-1/2 max-lg:w-full">
+      <h4 class="topper">Immediate Results</h4>
+      <h3 class="mb-8 text-4xl">Avalanche Hardwood Floors</h3>
+      <p class="mb-4 text-xl">
+        We developed a new website and Google Business Profile that started
+        getting estimate requests almost immediately.
+      </p>
+      <p class="mb-8 text-xl">
+        Typically takes months to see results, but good design gets results
+        right away.
+      </p>
+      <a class="btn-primary" href="/case-study">View Case Study</a>
+    </div>
+    <div class="w-1/2 max-lg:hidden">
+      <LinkPreview
+        id=`https://springshardwood.com/?utm-source=${SITE_UTM_SOURCE}-best-of-list`
+        category="Hardwood"
+        company="Avalanche Hardwood Floors"
+      />
+    </div>
+  </div>
   <div class="mx-auto max-w-4xl bg-gray-900 p-12 text-white">
     <h3 class="mb-3">Amazing results</h3>
     <div class="flex">
@@ -14,26 +40,45 @@ import { Icon } from "astro-icon/components";
       </p>
     </div>
     <div class="space-x- mx-auto flex">
-      <Icon name="star" class="text-6xl text-secondary animate-pulse" />
-      <Icon name="star" class="text-6xl text-secondary animate-pulse" />
-      <Icon name="star" class="text-6xl text-secondary animate-pulse" />
-      <Icon name="star" class="text-6xl text-secondary animate-pulse" />
-      <Icon name="star" class="text-6xl text-secondary animate-pulse" />
+      <Icon name="star" class="animate-pulse text-6xl text-secondary" />
+      <Icon name="star" class="animate-pulse text-6xl text-secondary" />
+      <Icon name="star" class="animate-pulse text-6xl text-secondary" />
+      <Icon name="star" class="animate-pulse text-6xl text-secondary" />
+      <Icon name="star" class="animate-pulse text-6xl text-secondary" />
     </div>
   </div>
 </section>
 
 <style>
-.animate-pulse:nth-child(2) {
-  animation-delay: 100ms;
-}
-.animate-pulse:nth-child(3) {
-  animation-delay: 200ms;
-}
-.animate-pulse:nth-child(4) {
-  animation-delay: 300ms;
-}
-.animate-pulse:nth-child(5) {
-  animation-delay: 400ms;
-}
+  .animate-pulse:nth-child(2) {
+    animation-delay: 100ms;
+  }
+  .animate-pulse:nth-child(3) {
+    animation-delay: 200ms;
+  }
+  .animate-pulse:nth-child(4) {
+    animation-delay: 300ms;
+  }
+  .animate-pulse:nth-child(5) {
+    animation-delay: 400ms;
+  }
+</style>
+<style is:global>
+  .link-preview {
+    --lp-corners: 0.75rem !important;
+    @apply overflow-hidden rounded-xl bg-white pb-4 transition-all hover:shadow-2xl dark:bg-zinc-950 dark:text-white;
+  }
+  .link-preview .link-preview__domain {
+    @apply pb-8 pt-4 text-center text-2xl font-bold;
+  }
+  .link-preview .link-preview__content {
+    @apply px-4;
+  }
+  .link-preview__title {
+    @apply pb-2 font-semibold;
+  }
+  .link-preview .link-preview__description {
+    overflow: visible;
+    display: inline;
+  }
 </style>
