@@ -30,7 +30,6 @@ import { SITE_UTM_SOURCE } from "@src/consts";
       <div class="container mx-auto flex justify-center">
         <LinkPreview
           id=`https://springshardwood.com/?utm-source=${SITE_UTM_SOURCE}`
-          category="Hardwood"
           company="Avalanche Hardwood Floors"
         />
       </div>
@@ -150,24 +149,24 @@ import { SITE_UTM_SOURCE } from "@src/consts";
       </p>
     </article>
   </main>
-
-  <style is:global>
-    .link-preview {
-      --lp-corners: 0.75rem !important;
-      @apply overflow-hidden rounded-xl bg-white pb-4 transition-all hover:shadow-2xl dark:bg-zinc-950 dark:text-white;
-    }
-    .link-preview .link-preview__domain {
-      @apply pb-8 pt-4 text-center text-2xl font-bold;
-    }
-    .link-preview .link-preview__content {
-      @apply px-4;
-    }
-    .link-preview__title {
-      @apply pb-2 font-semibold;
-    }
-    .link-preview .link-preview__description {
-      overflow: visible;
-      display: inline;
-    }
-  </style>
 </BaseLayout>
+
+<style is:global>
+  .link-preview {
+    --lp-corners: 0.75rem !important;
+    @apply overflow-hidden rounded-xl bg-white pb-4 transition-all hover:shadow-2xl dark:bg-zinc-950 dark:text-white;
+  }
+  .link-preview .link-preview__domain {
+    @apply pb-8 pt-4 text-center text-2xl font-bold;
+  }
+  .link-preview .link-preview__content {
+    @apply px-4;
+  }
+  .link-preview__title {
+    @apply pb-2 font-semibold no-underline;
+  }
+  .link-preview .link-preview__description {
+    overflow: visible;
+    display: inline;
+  }
+</style>
