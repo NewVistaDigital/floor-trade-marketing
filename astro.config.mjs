@@ -13,7 +13,11 @@ export default defineConfig({
   integrations: [
     mdx(),
     sitemap(),
-    icon(),
+    icon({
+      include: {
+        'material-symbols-light': ["calendar-add-on"],
+      },
+    }),
     tailwind(),
     robotsTxt(),
     partytown({
