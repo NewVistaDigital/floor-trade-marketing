@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
-import Services from "@components/content/HomeServices.astro";
+import HomeServices from "@components/content/HomeServices.astro";
 ---
 
 <BaseLayout
@@ -8,11 +8,11 @@ import Services from "@components/content/HomeServices.astro";
   description="Top-to-bottom marketing services for Flooring Contractors and Flooring Suppliers.">
   <div class="bg-white pt-24 dark:bg-stone-800">
     <h1>Marketing Services for Flooring Companies</h1>
-    <Services />
+    <HomeServices />
   </div>
 </BaseLayout>
 
-style>
+<style>
   h1 {
     @apply my-12 text-center text-5xl;
   }
