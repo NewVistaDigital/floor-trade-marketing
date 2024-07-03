@@ -8,7 +8,7 @@ import { slugify } from "./utils/slugify";
 
 export const SITE_TITLE = "Floor Trade Marketing";
 export const SITE_DESCRIPTION =
-  "Full service digital marketing, website design, local SEO, and ads for Flooring Companies and Flooring Suppliers.";
+  "We offer premium digital marketing, website design, local SEO, and ads for Flooring Companies and Flooring Suppliers.";
 export const SITE_URL = "https://floortrademarketing.com/";
 export const SITE_EMAIL = "webmaster@newvistadigital.com";
 export const SITE_PHONE = "(719) 639-1470";
