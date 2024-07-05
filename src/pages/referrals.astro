@@ -1,0 +1,41 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+
+import { LinkPreview } from "astro-embed";
+import { SITE_UTM_SOURCE } from "@src/consts";
+---
+
+<BaseLayout
+  title="The Best Flooring Companies | Web Design for Hardwood Floor, Tile, and Carpet Companies"
+  description="We've created a list of the best flooring companies in the nation.">
+  <main class="lg:py-46 bg-tan py-36 dark:bg-stone-900 md:py-40">
+    <article class="container prose mx-auto">
+      <h1 class="mb-8 text-center">Referral Program: Give $250, get $250</h1>
+      <p>
+        As a thank-you, we offer a generous referral program for intruducing new
+        flooring companies to us.
+      </p>
+      <p>
+        If you refer someone we don't already know to us and they become a
+        client, we will give you $250. On top of that, the person you refer will
+        receive a $250 credit toward services rendered. You both win!
+      </p>
+    </article>
+  </main>
+</BaseLayout>
+
+<style is:global>
+  .link-preview .link-preview .link-preview__domain {
+    @apply pb-8 pt-4 text-center text-2xl font-bold;
+  }
+  .link-preview .link-preview__content {
+    @apply px-4;
+  }
+  .link-preview__title {
+    @apply pb-2 font-semibold;
+  }
+  .link-preview .link-preview__description {
+    overflow: visible;
+    display: inline;
+  }
+</style>
